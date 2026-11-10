@@ -24,6 +24,15 @@ No API key? The route falls back to a **deterministic mock synthesis** so the
 full input → streaming → review/export flow remains demoable end-to-end.
 `ANTHROPIC_MODEL` overrides the default `claude-3-5-sonnet-20241022`.
 
+## Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FmellowMike92%2Fai-feedback-synthesizer)
+
+Or: Vercel → *Add New → Project* → import `ai-feedback-synthesizer`. No config
+needed — it detects Next.js automatically. Add `ANTHROPIC_API_KEY` in
+*Settings → Environment Variables* for live Claude synthesis (without it the
+app runs the deterministic mock).
+
 ## How it works
 
 1. **Input** — `FeedbackInputSchema` validates `employeeName`, `role`, `department`, `peerFeedbackNotes[]`, and `desiredTone` (`Direct | Empathetic | Executive | Growth_Oriented`).
